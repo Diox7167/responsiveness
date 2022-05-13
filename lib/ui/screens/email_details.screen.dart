@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:responsiveness/models/models.dart';
 import 'package:responsiveness/ui/widgets/widgets.dart';
 
-class EmailDetails extends StatelessWidget {
-  const EmailDetails({
+class EmailDetailsScreen extends StatelessWidget {
+  const EmailDetailsScreen({
     Key? key,
     required this.email,
   }) : super(key: key);

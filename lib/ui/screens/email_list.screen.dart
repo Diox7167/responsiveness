@@ -19,7 +19,7 @@ class EmailListScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => EmailDetails(email: email),
+                      builder: (context) => EmailDetailsScreen(email: email),
                     ),
                   );
                 },
