@@ -14,7 +14,6 @@ class EmailBodyPreview extends StatelessWidget {
     return Text(
       email.subject,
       style: const TextStyle(fontSize: 14),
-      maxLines: 2,
       overflow: TextOverflow.ellipsis,
     );
   }

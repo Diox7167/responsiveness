@@ -18,15 +18,18 @@ class SenderDetails extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
+            Flexible(
               child: Text(
                 email.sender.name,
-                style: Theme.of(context).textTheme.titleLarge,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
               ),
             ),
-            Flexible(child: EmailDeliveryInfo(email: email)),
+            Expanded(child: EmailDeliveryInfo(email: email)),
           ],
         ),
         const Divider(),

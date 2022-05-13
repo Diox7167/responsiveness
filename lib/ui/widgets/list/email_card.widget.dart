@@ -32,26 +32,44 @@ class EmailCardWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    email.sender.name,
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Hero(
+                          tag: "senderAvatar_$index",
+                          child: SenderAvatar(sender: email.sender),
+                        ),
+                        const SizedBox(
+                          width: 12,
+                        ),
+                        Flexible(
+                          child: Text(
+                            email.sender.name,
+                            maxLines: 2,
+                            style: const TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 12,
                   ),
                   EmailDeliveryInfo(email: email),
                 ],
               ),
               const Divider(),
-              ListTile(
-                title: EmailBodyPreview(email: email),
-                leading: Hero(
-                  tag: "senderAvatar_$index",
-                  child: SenderAvatar(sender: email.sender),
-                ),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.star_border),
-                ),
-              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(child: EmailBodyPreview(email: email)),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.star_border),
+                  ),
+                ],
+              )
             ],
           ),
         ),

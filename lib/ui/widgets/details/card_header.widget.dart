@@ -15,7 +15,7 @@ class CardHeaderWidget extends StatelessWidget {
       elevation: 2,
       color: Colors.grey[200],
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(12.0),
         child: Row(
           children: [
             Hero(

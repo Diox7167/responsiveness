@@ -6,7 +6,7 @@ class SenderAvatar extends StatelessWidget {
   const SenderAvatar({
     Key? key,
     required this.sender,
-    this.radius = 30,
+    this.radius = 25,
   }) : super(key: key);
 
   final Sender sender;
