@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsiveness/models/models.dart';
-import 'package:responsiveness/widgets/widgets.dart';
+import 'package:responsiveness/ui/widgets/widgets.dart';
 
 class EmailDetails extends StatelessWidget {
   const EmailDetails({
