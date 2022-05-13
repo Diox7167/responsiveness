@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsiveness/models/models.dart';
 
-class EmailPreview extends StatelessWidget {
-  const EmailPreview({
+class EmailBodyPreview extends StatelessWidget {
+  const EmailBodyPreview({
     Key? key,
     required this.email,
   }) : super(key: key);
@@ -11,18 +11,11 @@ class EmailPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          email.sender.name,
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-        Text(
-          email.subject,
-          style: Theme.of(context).textTheme.subtitle2,
-        ),
-      ],
+    return Text(
+      email.subject,
+      style: const TextStyle(fontSize: 14),
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

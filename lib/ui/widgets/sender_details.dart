@@ -1,26 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:responsiveness/models/models.dart';
 
+import 'widgets.dart';
+
 class SenderDetails extends StatelessWidget {
+  final Email email;
   const SenderDetails({
     Key? key,
-    required this.sender,
+    required this.email,
   }) : super(key: key);
-
-  final Sender sender;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          sender.name,
-          style: Theme.of(context).textTheme.titleLarge,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                email.sender.name,
+                style: Theme.of(context).textTheme.titleLarge,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+              ),
+            ),
+            Flexible(child: EmailDeliveryInfo(email: email)),
+          ],
         ),
+        const Divider(),
         Text(
-          sender.email,
-          style: Theme.of(context).textTheme.titleMedium,
+          email.sender.email,
+          overflow: TextOverflow.ellipsis,
+          maxLines: 2,
+          style: const TextStyle(fontSize: 12),
         ),
       ],
     );
