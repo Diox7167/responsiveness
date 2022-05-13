@@ -8,6 +8,9 @@ class EmailListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Responsiveness App"),
+      ),
       body: Builder(builder: (context) {
         return Padding(
           padding: const EdgeInsets.all(8.0),

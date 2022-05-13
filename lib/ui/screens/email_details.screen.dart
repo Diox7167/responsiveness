@@ -14,6 +14,10 @@ class EmailDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text(
+          email.sender.name,
+          style: const TextStyle(color: Colors.white),
+        ),
         actions: [
           IconButton(
             onPressed: () {},
