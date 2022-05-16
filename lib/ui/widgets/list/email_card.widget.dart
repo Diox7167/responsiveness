@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:responsiveness/ui/widgets/widgets.dart';
+import 'package:responsiveness/utils/extensions.dart';
 
 import '../../../models/models.dart';
 
 class EmailCardWidget extends StatelessWidget {
   final int index;
   final Email email;
-  const EmailCardWidget({Key? key, required this.index, required this.email})
+  final Function(Email)? selectedEmail;
+  const EmailCardWidget(
+      {Key? key, required this.index, required this.email, this.selectedEmail})
       : super(key: key);
 
   @override
@@ -15,14 +18,16 @@ class EmailCardWidget extends StatelessWidget {
       color: Colors.grey[200],
       child: InkWell(
         onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => EmailDetailsScreen(
-                email: email,
-                index: index,
-              ),
-            ),
-          );
+          context.isSmallScreen
+              ? Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => EmailDetailsScreen(
+                      email: email,
+                      index: index,
+                    ),
+                  ),
+                )
+              : selectedEmail!(email);
         },
         child: Padding(
           padding: const EdgeInsets.all(16.0),

@@ -4,10 +4,8 @@ import 'package:responsiveness/models/email.dart';
 import '../widgets.dart';
 
 class CardHeaderWidget extends StatelessWidget {
-  final int index;
   final Email email;
-  const CardHeaderWidget({Key? key, required this.index, required this.email})
-      : super(key: key);
+  const CardHeaderWidget({Key? key, required this.email}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +16,9 @@ class CardHeaderWidget extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Row(
           children: [
-            Hero(
-              tag: "senderAvatar_$index",
-              child: SenderAvatar(
-                sender: email.sender,
-                radius: 30.0,
-              ),
+            SenderAvatar(
+              sender: email.sender,
+              radius: 30.0,
             ),
             Expanded(
               child: Padding(
